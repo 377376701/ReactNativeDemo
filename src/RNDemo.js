@@ -4,9 +4,8 @@ import {
     StyleSheet,
     Text,
     View,
-    NativeModules, ScrollView
+    NativeModules
 } from 'react-native';
-import Row from "./components/Row";
 
 export default class RNDemo extends Component {
     _toast() {
@@ -17,8 +16,8 @@ export default class RNDemo extends Component {
         })
     }
 
-    _uuid () {
-        NativeModules.ToastModule.getuuid("1111",(uuid) => {
+    _uuid() {
+        NativeModules.ToastModule.getuuid("1111", (uuid) => {
             console.info(uuid)
             alert(uuid)
         })
@@ -38,52 +37,17 @@ export default class RNDemo extends Component {
             </View>
         );
 
-        // return (
-        //     <ScrollView style={styles.container}>
-        //         <Row title={'Toggle Drawer'} onPress={this.toggleDrawer}/>
-        //         <Row title={'Push Screen'} testID={'pushScreen'} onPress={this.pushScreen}/>
-        //         <Row
-        //             ref={(ref) => (this.previewRef = ref)}
-        //             title={'Preview Screen'}
-        //             testID={'previewScreen'}
-        //             onPress={this.pushScreen}
-        //             onPressIn={this.previewScreen}
-        //         />
-        //         {/*<Row title={'Push List Screen'} testID={'pushListScreen'} onPress={this.pushListScreen}/>*/}
-        //         <Row title={'Custom TopBar'} onPress={this.pushCustomTopBarScreen}/>
-        //         <Row title={'Custom Button'} onPress={this.pushCustomButtonScreen}/>
-        //         <Row title={'Top Tabs Screen'} onPress={this.pushTopTabsScreen} platform={'android'}/>
-        //         <Row title={'Show Modal'} onPress={this.showModal}/>
-        //         <Row title={'Show Lightbox'} onPress={this.showLightBox}/>
-        //         <Row title={'Show In-App Notification'} onPress={this.showInAppNotification}/>
-        //     </ScrollView>
-        // );
+
     }
 }
 
 const styles = StyleSheet.create({
-    // container: {
-    //
-    //     flex: 1,
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    //     backgroundColor: '#F5FCFF',
-    // },
-
     container: {
+
         flex: 1,
-    },
-    row: {
-        height: 48,
-        paddingHorizontal: 16,
-        flexDirection: 'row',
-        alignItems: 'center',
         justifyContent: 'center',
-        borderBottomWidth: 1,
-        borderBottomColor: 'rgba(0, 0, 0, 0.054)',
-    },
-    text: {
-        fontSize: 16,
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
     },
 });
 
