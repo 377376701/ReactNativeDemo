@@ -1,4 +1,4 @@
-import React, {Component} from 'React';
+import React, {Component} from 'react';
 import {Text, View} from "react-native";
 
 /**
@@ -15,7 +15,7 @@ class Blink extends Component {
             this.setState(previousState => {
                 return {showText: !previousState.showText};
             });
-        }, 1000);
+        }, 500);
     }
 
     render() {
